@@ -1,0 +1,20 @@
+/**
+ * Time complexities for the Bubble sort algorithm:
+ *
+ * Best case: O(n)
+ *     When the input is already sorted, the time complexity is O(n) because
+ *     even though no swaps will be made, the algorithm still goes through
+ *     the entire array once.
+ *
+ * Average case: O(n^2)
+ *     For each element, the algorithm goes through the rest of the array,
+ *     leading to a time complexity of O(n^2).
+ *
+ * Worst case: O(n^2)
+ *     When the input is sorted in reverse order, every pair of elements needs
+ *     to be swapped, leading to a time complexity of O(n^2).
+ */
+
+Best case: O(n)
+Average case: O(n^2)
+Worst case: O(n^2)
