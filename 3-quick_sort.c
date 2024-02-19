@@ -2,21 +2,20 @@
 #include <stdio.h>
 
 /**
- * swap - swaps the values of two integers
- * @a: pointer to the first integer
- * @b: pointer to the second integer
- * @array: The original array
- * @size: Number of elements in the array
+ * swap - Swaps two elements of an array
+ * @array: The array
+ * @i: The first index
+ * @j: The second index
+ * @size: The size of the array
  */
-void swap(int *a, int *b, int *array, size_t size)
+void swap(int *array, size_t i, size_t j, size_t size)
 {
-	if (*a != *b)
-	{
-		int t = *a;
-		*a = *b;
-		*b = t;
-		print_array(array, size);
-	}
+	int tmp;
+
+	tmp = array[i];
+	array[i] = array[j];
+	array[j] = tmp;
+	print_array(array, size);
 }
 
 /**
@@ -39,10 +38,10 @@ int partition (int arr[], int low, int high, size_t size)
 		if (arr[j] < pivot)
 		{
 		i++;
-		swap(&arr[i], &arr[j], arr, size);
+		swap(arr, i, j, size);
 		}
 	}
-	swap(&arr[i + 1], &arr[high], arr, size);
+	swap(arr, i + 1, high, size);
 	return (i + 1);
 }
 

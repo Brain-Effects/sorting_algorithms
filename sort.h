@@ -24,11 +24,12 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
-void swap(int* a, int* b, int *array, size_t size);
+void swap(int *array, size_t i, size_t j, size_t size);
 int partition (int arr[], int low, int high, size_t size);
 void quickSort(int arr[], int low, int high, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
+void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
@@ -36,5 +37,7 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 void print_number(int n);
+void heapify(int *array, size_t size);
+void sift_down(int *array, size_t start, size_t end, size_t size);
 
 #endif /* SORT_H */
