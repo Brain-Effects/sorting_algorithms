@@ -10,10 +10,13 @@
  */
 void swap(int* a, int* b, int *array, size_t size)
 {
-	int t = *a;
-	*a = *b;
-	*b = t;
-	print_array(array, size);
+	if (*a != *b)
+	{
+		int t = *a;
+		*a = *b;
+		*b = t;
+		print_array(array, size);
+	}
 }
 
 /**
