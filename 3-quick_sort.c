@@ -19,47 +19,51 @@ void swap(int *array, size_t i, size_t j, size_t size)
 }
 
 /**
- * partition - partitions the array for quicksort
- * @arr: array to be partitioned
- * @low: starting index of the partition
- * @high: ending index of the partition
- * @size: Number of elements in the array
- *
- * Return: the partition index
+ * partition - Partitions an array using the Lomuto scheme
+ * @array: The array
+ * @low: The lowest index of the partition
+ * @high: The highest index of the partition
+ * @size: The size of the array
+ * Return: The final index of the pivot
  */
-int partition (int arr[], int low, int high, size_t size)
+size_t partition(int *array, size_t low, size_t high, size_t size)
 {
-	int pivot = arr[high];
-	int i = (low - 1);
-	int j;
+	int pivot;
+	size_t i, j;
 
-	for (j = low; j <= high - 1; j++)
+	pivot = array[high];
+	i = low - 1;
+	for (j = low; j < high; j++)
 	{
-		if (arr[j] < pivot)
+	if (array[j] < pivot)
 		{
 		i++;
-		swap(arr, i, j, size);
+		if (i != j)
+		swap(array, i, j, size);
 		}
 	}
-	swap(arr, i + 1, high, size);
+	if (array[i + 1] > pivot)
+		swap(array, i + 1, high, size);
 	return (i + 1);
 }
 
 /**
- * quickSort - implements the quicksort algorithm
- * @arr: array to be sorted
- * @low: starting index of the array
- * @high: ending index of the array
- * @size: Number of elements in the array
+ * quick_sort_helper - Recursively sorts an array using the quick sort algorithm
+ * @array: The array
+ * @low: The lowest index of the partition
+ * @high: The highest index of the partition
+ * @size: The size of the array
  */
-void quickSort(int arr[], int low, int high, size_t size)
+void quick_sort_helper(int *array, size_t low, size_t high, size_t size)
 {
+	size_t pivot;
+
 	if (low < high)
 	{
-		int pi = partition(arr, low, high, size);
-
-		quickSort(arr, low, pi - 1, size);
-		quickSort(arr, pi + 1, high, size);
+		pivot = partition(array, low, high, size);
+		if (pivot > 0)
+		quick_sort_helper(array, low, pivot - 1, size);
+		quick_sort_helper(array, pivot + 1, high, size);
 	}
 }
 
@@ -73,5 +77,5 @@ void quickSort(int arr[], int low, int high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	quickSort(array, 0, size - 1, size);
+	quick_sort_helper(array, 0, size - 1, size);
 }
