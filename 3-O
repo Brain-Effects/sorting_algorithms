@@ -1,0 +1,18 @@
+/**
+ * Time complexities for the Quick sort algorithm:
+ *
+ * Best case: O(nlog(n))
+ *     When the input is a balanced partition, the time complexity is O(nlog(n)) because
+ *     the partitioning step will divide the list into two nearly equal pieces.
+ *
+ * Average case: O(nlog(n))
+ *     This is the expected time complexity when the input is a random array or
+ *     when the input contains many duplicates.
+ *
+ * Worst case: O(n^2)
+ *     The worst case occurs when the input is an array sorted in reverse order.
+ */
+
+Best case: O(nlog(n))
+Average case: O(nlog(n))
+Worst case: O(n^2)
