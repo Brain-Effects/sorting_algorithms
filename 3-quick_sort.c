@@ -8,7 +8,7 @@
  * @array: The original array
  * @size: Number of elements in the array
  */
-void swap(int* a, int* b, int *array, size_t size)
+void swap(int *a, int *b, int *array, size_t size)
 {
 	if (*a != *b)
 	{

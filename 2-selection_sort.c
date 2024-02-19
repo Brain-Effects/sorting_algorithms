@@ -23,8 +23,8 @@ void selection_sort(int *array, size_t size)
 	if (array[j] < array[min_idx])
 	min_idx = j;
 
-	/* Swap the found minimum element with the first element of
-	 * unsorted array */
+	/* Swap the found minimum element with the first element of */
+	/* unsorted array */
 	if (min_idx != i)
 		{
 		temp = array[min_idx];
